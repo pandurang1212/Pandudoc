@@ -1,4 +1,17 @@
-this is my first git command````
+
+this is my first git command
+installation process
+in ubuntu
+apt-get install git 
+--latest version 
+add-apt-repository ppa:git-core/ppa # apt update; apt install git
+
+in centos 
+yum install git
+
+to check git 
+git --version
+
 Process of git creation
 first register github repositor and login
 
