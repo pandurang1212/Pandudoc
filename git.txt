@@ -1,1 +1,73 @@
-this is my first git command`````
+this is my first git command````
+Process of git creation
+first register github repositor and login
+
+you can repo and create file and data push do for as per requiremnet 
+
+create a repo using + symbol new repo
+give unige name and choose public or private and licene is their
+
+and you can create branch if like maindefault will created
+
+you choose created repos go code section copy https link
+
+if you want clone repo you use cmd
+git clone https://github.com/pandurang1212/Pandudoc.git
+
+
+then it clone all repo to perticular location.
+
+if you are new location initial use cmd
+git init 
+
+if want create new branch
+git branch -m main
+
+you want check status 
+git status
+
+there are 3 three stage (Modification, staging, commit)
+
+if you check log 
+
+git log 
+
+git log -p -2
+
+if you want restore file staging area modification 
+git restore --staged test.txt
+
+if you want complete resotre repo
+git restore text.txt -----never use this cmd
+
+if you want commit file]
+git commit -m " Reason of Commit"
+
+if you want check remote server repo list
+
+git remote -v
+
+if want push commited file origin to main
+
+git push origin main
+--commited file to main repo
+
+git access token format
+
+git remote set-url origin https://<token_key>@github.com/username/reponame.git
+
+
+
+if you have create access token 
+goto github --> setting --> developr settings --> Personal access token--> tokens(classic) --genrate new token
+
+gine name token --> gitkey --> choose as per your requirement rights to repo --> default choose all
+genrate key -->  once key genrate it will show you copy
+
+save safely in bcoz it wont show again..
+
+
+
+
+
+
