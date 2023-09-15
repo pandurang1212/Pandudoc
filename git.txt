@@ -20,7 +20,7 @@ you can repo and create file and data push do for as per requiremnet
 create a repo using + symbol new repo
 give unige name and choose public or private and licene is their
 
-and you can create branch if like maindefault will created
+and you can create branch if like main default will created
 
 you choose created repos go code section copy https link
 
@@ -35,6 +35,13 @@ git init
 
 if want create new branch
 git branch -m main
+
+if want switches branches
+git checkout 'doc'
+
+git checkout origin 'another_branch'
+
+git checkout origin/'another_branch'
 
 you want check status 
 git status
@@ -55,6 +62,13 @@ git restore text.txt -----never use this cmd
 
 if you want commit file]
 git commit -m " Reason of Commit"
+
+$ git merge REMOTE-NAME/BRANCH-NAME
+# Merges updates made online with your local work
+
+rename the branch name 
+git push REMOTE-NAME LOCAL-BRANCH-NAME:REMOTE-BRANCH-NAME
+This pushes the LOCAL-BRANCH-NAME to your REMOTE-NAME, but it is renamed to REMOTE-BRANCH-NAME.
 
 if you want check remote server repo list
 
