@@ -63,6 +63,9 @@ git restore text.txt -----never use this cmd
 if you want commit file]
 git commit -m " Reason of Commit"
 
+$ git merge REMOTE-NAME/BRANCH-NAME
+# Merges updates made online with your local work
+
 if you want check remote server repo list
 
 git remote -v
