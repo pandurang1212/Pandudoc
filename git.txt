@@ -66,6 +66,10 @@ git commit -m " Reason of Commit"
 $ git merge REMOTE-NAME/BRANCH-NAME
 # Merges updates made online with your local work
 
+rename the branch name 
+git push REMOTE-NAME LOCAL-BRANCH-NAME:REMOTE-BRANCH-NAME
+This pushes the LOCAL-BRANCH-NAME to your REMOTE-NAME, but it is renamed to REMOTE-BRANCH-NAME.
+
 if you want check remote server repo list
 
 git remote -v
