@@ -1,0 +1,70 @@
+
+how to pull the docker container
+docker pull centos
+
+how to run container
+docker run centos
+
+how to see downloaded container
+docker images
+
+Step 5 — Running a Docker Container
+docker run -it centos
+(it will itrative mode)
+
+how to install application in container
+
+yum install mariadb-server
+
+how to exit container 
+exit
+
+how to commit the changes in container
+docker commit -m "What did you do to the image" -a "Author Name" container-id repository/new_image_name
+
+Ex: docker commit -m "added mariadb-server" -a "Sunday Ogwu-Chinuwa" 59839a1b7de2 finid/centos-mariadb
+
+Step 7 — Listing Docker Containers
+
+how to see all active and inactive all container 
+docker ps
+
+only active container see
+docker ps -a
+
+veiw latest container 
+docker ps -l
+
+how to stop container force fully remove (-f)
+docker stop container-id
+
+how to run container in dettach mode (-d)
+docker run -d nginx
+
+how to assign name of the container --name c1
+docker run --name -d nginx
+
+how to list all container id 
+echo $(docker ps -aq)
+
+we want remove all container all 
+docker rm -f $(docker ps -aq)
+
+howm to remove images
+docker rmi imageid/imagename
+
+direct run 
+docker run --name -d nginx
+
+how to see log 
+docker logs -f(live log) c1
+
+
+Step 8 — Pushing Docker Images to a Docker Repository
+
+docker login -u docker-registry-username
+
+docker push docker-registry-username/docker-image-name
+
+
+
