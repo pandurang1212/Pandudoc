@@ -66,5 +66,64 @@ docker login -u docker-registry-username
 
 docker push docker-registry-username/docker-image-name
 
+how to use exec --name c1 nginx
+exit from shell ctrl+pq
+
+how to check ip add
+docker inspect nginx
+all list details docker
+
+how to check https isworking or not
+curl 172.17.0.2:80
+
+docker port mapping 
+docker run --name c2 -p 9090:80 -d nginx
+automatic port mapping we are using (-P)
+nano 
+we need delete all images prune-a cmd
+docker image prune -a (all)
+it will delete all images atleatest one conttainer associates with them.
+
+exsitng container inside we can go
+docker exec -it c4 bash 
+
+how to pass environment vaiables in docker
+docker run --name mydb -d -e MYSQL_ROOT_PASSWORD=abc mysql:5
+
+to got container inside
+docker exec -it mydb bash
+
+then login mysql 
+mysql -u root -p
+
+password =abc
+
+show Databases;
+
+to exit ctrl=pq
+
+how to link container with mydb (--link name 0f container)
+docker run --name wordpress -d -P --link mydb wordpress
+
+then access in browser http://192.168.18.5:32768/wp-admin
+then it will ask db details and host fill it will accpet
+
+then set wordpress credetial and login
+
+busybox- which combines tiny versions  unix multiple into a single small executalbe
+
+ docker run --name busybox1 -it busybox
+docker run --name busybox2 --link busybox1:busybox1-alias -it busybox
+
+networking of container
+1. bridge 2. host 3. none
+
+docker inspect bridge
+
+by default all container is connected with bridge network.
+default address : 172.17.0.2/16
+g/w 172.17.0.1/16
+
+
 
 
