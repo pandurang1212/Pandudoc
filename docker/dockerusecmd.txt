@@ -1,3 +1,18 @@
+This file contains
+Pull images,
+Run images 
+Stop container
+Remove images
+Port mapping
+Exec cmd 
+Image d detached mode
+Rocket logs 
+Linking images
+Busybox
+Inspect images
+MySQL variable passing -e 
+Browsing ip port mapping.
+
 
 how to pull the docker container
 docker pull centos
