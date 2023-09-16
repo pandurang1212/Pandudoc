@@ -1,0 +1,110 @@
+how to install Docker
+
+For script installation
+curl -fsSL https://get.docker.com/ | sh
+sudo systemctl start docker
+sudo systemctl status docker
+sudo systemctl enable docker
+
+
+for manual Install
+Sudo yum check-update
+sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+sudo yum install docker
+  
+sudo systemctl start docker
+sudo systemctl enable docker
+sudo systemctl status docker
+
+
+for specfic version install
+yum list docker-ce --showduplicates | sort –r
+sudo yum install docker-ce-<VERSION STRING>
+
+
+
+Step 2 — Executing Docker Command Without Sudo (Optional)
+
+Output
+docker: Cannot connect to the Docker daemon. Is the docker daemon running on this host?.
+See 'docker run --help'.
+
+sudo usermod -aG docker $(whoami)
+
+sudo usermod -aG docker username
+
+Step 3 — Using the Docker Command
+docker [option] [command] [arguments]
+docker
+Output
+
+    attach    Attach to a running container
+    build     Build an image from a Dockerfile
+    commit    Create a new image from a container's changes
+    cp        Copy files/folders between a container and the local filesystem
+    create    Create a new container
+    diff      Inspect changes on a container's filesystem
+    events    Get real time events from the server
+    exec      Run a command in a running container
+    export    Export a container's filesystem as a tar archive
+    history   Show the history of an image
+    images    List images
+    import    Import the contents from a tarball to create a filesystem image
+    info      Display system-wide information
+    inspect   Return low-level information on a container or image
+    kill      Kill a running container
+    load      Load an image from a tar archive or STDIN
+    login     Log in to a Docker registry
+    logout    Log out from a Docker registry
+    logs      Fetch the logs of a container
+    network   Manage Docker networks
+    pause     Pause all processes within a container
+    port      List port mappings or a specific mapping for the CONTAINER
+    ps        List containers
+    pull      Pull an image or a repository from a registry
+    push      Push an image or a repository to a registry
+    rename    Rename a container
+    restart   Restart a container
+    rm        Remove one or more containers
+    rmi       Remove one or more images
+    run       Run a command in a new container
+    save      Save one or more images to a tar archive
+    search    Search the Docker Hub for images
+    start     Start one or more stopped containers
+    stats     Display a live stream of container(s) resource usage statistics
+    stop      Stop a running container
+    tag       Tag an image into a repository
+    top       Display the running processes of a container
+    unpause   Unpause all processes within a container
+    update    Update configuration of one or more containers
+    version   Show the Docker version information
+    volume    Manage Docker volumes
+    wait      Block until a container stops, then print its exit code
+
+    
+
+    docker docker-subcommand --help
+
+    docker info
+
+    Step 4 — Working with Docker Images
+    docker run hello-world
+    Output
+Hello from Docker.
+This message shows that your installation appears to be working correctly.
+...
+
+
+docker search centos
+Output
+NAME                            DESCRIPTION                                     STARS     OFFICIAL   AUTOMATED
+centos                          The official build of CentOS.                   2224      [OK]
+jdeathe/centos-ssh              CentOS-6 6.7 x86_64 / CentOS-7 7.2.1511 x8...   22                   [OK]
+jdeathe/centos-ssh-apache-php   CentOS-6 6.7 x86_64 / Apache / PHP / PHP M...   17                   [OK]
+million12/centos-supervisor     Base CentOS-7 with supervisord launcher, h...   11                   [OK]
+nimmis/java-centos              This is docker images of CentOS 7 with dif...   10                   [OK]
+torusware/speedus-centos        Always updated official CentOS docker imag...   8                    [OK]
+nickistre/centos-lamp           LAMP on centos setup                            3                    [OK]
+
+
