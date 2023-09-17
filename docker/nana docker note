@@ -1,1 +1,27 @@
 
+how to create new network docker
+docker network create mongo-network
+how to network 
+docker network ls
+
+
+how to mongo and mongo express connection 
+we need pull two images 1. mongo 2. mongo-express
+docker pull mongo
+docker pull mongo-express
+
+we need run mongo with network created and environmental variable pass using port mapping.
+
+ docker run -d --network mongo-network --name mongo -p 27017:27017 \
+	-e MONGO_INITDB_ROOT_USERNAME=admin \
+	-e MONGO_INITDB_ROOT_PASSWORD=password \
+	mongo
+
+URL Link here we need to follow.
+
+https://gitlab.com/nanuchi/techworld-js-docker-demo-app
+
+
+
+
+
