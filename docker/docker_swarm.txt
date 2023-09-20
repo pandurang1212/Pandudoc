@@ -10,6 +10,7 @@ docker swarm
   we need to copy that all worker nodes then all the node connected each other.
   Ex : Token Id: 
    docker swarm join     --token SWMTKN-1-1k07pucckd5pkbqopfio61gumcq9cqy5tswbfcokqp24qm2bif-8z7z2i25sf3x4mk7n74nrdwzs     192.168.18.5:2377
+
 we need to check worker nodes in master 
   docker node ls
   it will all nodes and it will show leader node but this will work in master node cmd
