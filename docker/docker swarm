@@ -1,0 +1,56 @@
+docker swarm 
+
+  we need to setup 1 master node and 2 worker node
+  like we need install all 3 node docker service with locally connected.
+  we need to stop firewall service in master node
+
+  then we need to start docker swarm init
+  docker swarm init --advertise-addr 192.168.18.5
+  this will work as a master and it will genrate token for worker node 
+  we need to copy that all worker nodes then all the node connected each other.
+  Ex : Token Id: 
+   docker swarm join     --token SWMTKN-1-1k07pucckd5pkbqopfio61gumcq9cqy5tswbfcokqp24qm2bif-8z7z2i25sf3x4mk7n74nrdwzs     192.168.18.5:2377
+we need to check worker nodes in master 
+  docker node ls
+  it will all nodes and it will show leader node but this will work in master node cmd
+
+-- how to create service in docker
+  docker service create --name "MyJenkinsServer" -p 8080:8080 jenkins/jenkins
+  how to check servioce
+  docker service ls
+  to see the perticular serive details
+  docker service ps Myjenkinserver(service name)
+
+  how to put master node drain state (means any job submiited it wont run inthe master node)
+ docker node update --availability drain master2
+if need that drain node in active state use instaed of drain --> Active
+  the againthis node will come back as a active.
+ how to remove  the serice command is 
+  docker service rm Myjenkinsserver(Serivce name)
+-- 
+  how to run serive at a time two node using replica 
+  docker service create --name "MyJenkinsServer" --replicas=2 -p 8080:8080 jenkins/jenkins
+   here any one server gone down automatically start another node serive running.
+
+  --how to scale service 
+  docker service scale MyJenkinsServer=5
+  here the service should run at a time nodes it scale availablity.
+  this perfect example of the load balancer.
+
+  how to leave in node in docker swarm
+  docker swarm node leave
+  this command will remove node from master it will show the down.
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+   
+  
+  
