@@ -1,0 +1,32 @@
+For Learning i ahve user this video link -https://www.youtube.com/watch?v=XgwV2HnBSws
+
+terraform is a IaC code(infracsture as a code) it will support all cloud supportthis tool will on system and infrasturcture level building.
+
+what is the diffrence between IaC and Configuration management as code 
+IAC it will work managing and provisioning of infrastrure through code instead of using a manual process to configure device or systems.
+Ex tools:  Terraform , Azure ARM Template, google Cloud Deployemnt manager, Cloud Formation, pulumi etc.
+
+Configuration mgmt as code --
+is the practice of managing configuration file in a repo. Config files establish the parameters and setting for the app ,server processing, operating systems.
+
+
+How to install terrform.
+https://developer.hashicorp.com/terraform/downloads?product_intent=terraform
+
+for centos 
+sudo yum install -y yum-utils
+sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
+sudo yum -y install terraform
+terrform --version
+
+terraform declartion language HCL- Hashicorp configuration langauge.
+HCL syntax 
+<block> <parameter> {
+   key1 = value1
+   key2 = value2
+
+ } 
+
+
+
+
