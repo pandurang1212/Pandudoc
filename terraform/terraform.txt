@@ -27,6 +27,10 @@ HCL syntax
 
  } 
 
-
-
+we neet setup all aws console setup installation aws and configuration.
+after install we need initailize terrofrom initailize
+write terraform code as per your reqiuermnet 
+and execute
+--Plan cmd
+terraform plan -out HelloWorld.txt 
 
