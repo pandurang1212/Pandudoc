@@ -20,4 +20,13 @@ we need -m (module)
 we need to check uptime of all server
 ansible all -m shell -a "uptime"
 
+installtion of application using yum module
+ansible webservers -m yum -a "name=nginx state=present" -b
+
+like we have use -m file module
+
+
+copy module
+
+
 
