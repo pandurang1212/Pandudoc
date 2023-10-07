@@ -1,0 +1,32 @@
+configuration mgmt tool:
+we need configure all hosts pasword less access
+then we need install ansible
+we need configure /etc/ansible/hosts  file add all server name/ip and also required groups [webservers], [dbserver]
+
+then we need test the command
+ansible all -m ping
+it give success response
+
+we need single server ping 
+ansible node1 -m ping
+
+for multiple server 
+ansible node1:node2 -m ping
+
+for multiple groups  
+ansible webervers:dbservers -m ping
+
+we need -m (module)
+we need to check uptime of all server
+ansible all -m shell -a "uptime"
+
+installtion of application using yum module
+ansible webservers -m yum -a "name=nginx state=present" -b
+
+like we have use -m file module
+
+
+copy module
+
+
+
