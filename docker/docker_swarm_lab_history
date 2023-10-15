@@ -1,0 +1,78 @@
+  1  yum update
+    2  yum install ansible -y
+    3  curl https://get.docker.com | bash
+    4  sudo dnf install docker
+    5  docker ps a
+    6  docker ps -a
+    7  docker run -d --name web1 -p 9000:80 nginx
+    8  docker login -u pandurangbugade
+    9  docker run -d --name web1 -p 9000:80 nginx
+   10  docker pull nginx
+   11  docker pull nginx:latest
+   12  systemctl start docker
+   13  docker pull nginx:latest
+   14  docker run -d --name web1 -p 9000:80 nginx
+   15  docker run -d --name web2 -p 9002:80 nginx
+   16  docker images prune
+   17  docker stop $(docker ps -aq)
+   18  docker rm $(docker ps -aq)
+   19  docker rmi -f $(docker ps -aq)
+   20  docker rmi -f $(docker images -aq)
+   21  docker images
+   22  docker run -it --name web1 -v /data01 ubuntu /bin/bash
+   23  docker run -it --name web2 -v pandudoc/data01 ubuntu /bin/bash
+   24  cd /var/lib/docker/volumes/
+   25  ls
+   26  cd 1e52785937bbb27ecddc9565a49aa8e97f6be0a80d1b9a846fa98f682
+   27  cd /1e52785937bbb27ecddc9565a49aa8e97f6be0a80d1b9a846fa98f6820b35882/data01
+   28  cd /1e52785937bbb27ecddc9565a49aa8e97f6be0a80d1b9a846fa98f6820b35882/
+   29  ls
+   30  cd /479b490e299a8d4486fb161c86e967f29e1f4538c9f48b37bd2971024e423a5f/data01
+   31  ls
+   32  cat backingFsBlockDev
+   33  cat metadata.db
+   34  ls
+   35  cd 479b490e299a8d4486fb161c86e967f29e1f4538c9f48b37bd2971024e423a5f/
+   36  ls
+   37  cd _data/
+   38  ls
+   39  ..
+   40  cd..
+   41  ls
+   42  cd ..
+   43  ls
+   44  exit
+   45  vi dockerfile
+   46  docker ps
+   47  docker stop web10
+   48  docker rm web10
+   49  docker rmi ImageNginx
+   50  docker rmi ImangeNginx
+   51  docker rmi  pandurangbugade/pandudoc:ImangeNginx
+   52  ls
+   53  docker build -t pandurangbugade/pandudoc:tomcat .
+   54  vi dockerfile
+   55  docker build -t pandurangbugade/pandudoc:tomcat .
+   56  docker push pandurangbugade/pandudoc:tomcat
+   57  docker images
+   58  docker run -d --name tomcat1 -p 9007:8080 tomcat
+   59  docker ps
+   60  docker exec -it tomcat bash
+   61  docker exec -it tomcat /bin/bash
+   62  docker exec -it c7d8c81f6fac /bin/bash
+   63  docker serice ls
+   64  docker service ls
+   65  docker service rm web12
+   66  docker service create --name web13 --replicas 3 -p 9007:80 --driver overlay nginx
+   67  docker network ls
+   68  docker service create --name web13 --replicas=33 -p 9007:80 --driver overlay nginx
+   69  docker service create --name web13 --replicas=33 -p 9007:80 --network frontend nginx
+   70  docker service scale=6
+   71  docker service scale web13=6
+   72  docker inspect web13
+   73  docker network ls
+   74  docker network --help
+   75  docker network inspect
+   76  docker network inspect web13
+   77  docker network inspect frontend
+   78  history
