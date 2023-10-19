@@ -58,6 +58,23 @@ and setup all set logs in master
    48  kubectl describe get svc nginx
    49  kubectl describe svc nginx
    50  history
+    51  snap install helm --classic
+   52  helm repo add bitnami https //charts.bitnami.com/bitnami
+   53  helm repo add bitnami https://charts.bitnami.com/bitnami
+   54  helm search repo
+   55  helm --version
+   56  helm -version
+   57  helm pull bitnami/nginx --untar=true
+   58  kubectl get svc
+   59  kubectl get pods
+   60  kubectl --help
+   61  kubectl scale --replicas=0
+   62  helm install my-nginx bitnami/nginx
+   63  kubectl get svc --namespace default -w my-nginx
+   64  kubectl drescribe svc
+   65  kubectl drescribe svc
+   66  kubectl describe svc
+   67  history
 
 worker node logs
  1  vi install.sh
