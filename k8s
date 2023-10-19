@@ -1,0 +1,89 @@
+how to install k8s
+follw video link 
+https://www.youtube.com/watch?v=rlLcYgraDk0&list=PLAdTNzDIZj__bptTvTGIaL1ezkeg_p-5R&index=2
+git hub repo
+
+https://github.com/jaiswaladi246/K8/blob/main/Nginx.yaml
+
+i have created two ubuntu server in my vm machine.
+and setup all set logs in master
+
+  vi install.sh
+    2  sh install.sh
+    3  kubeadm init --pod-network-cidr=192.168.0.0/16
+    4  apt update
+    5  sudo swapoff -a
+    6  sudo sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
+    7  sudo tee /etc/modules-load.d/containerd.conf <<EOF
+    8  overlay
+    9  br_netfilter
+   10  EOF
+   11  sudo modprobe overlay
+   12  sudo modprobe br_netfilter
+   13  sudo tee /etc/sysctl.d/kubernetes.conf <<EOF
+   14  net.bridge.bridge-nf-call-ip6tables = 1
+   15  net.bridge.bridge-nf-call-iptables = 1
+   16  net.ipv4.ip_forward = 1
+   17  EOF
+   18  sudo sysctl --system
+   19  vi /etc/hosts
+   20  sudo hostnamectl set-hostname "k8smaster.example.net"
+   21  exec bash
+   22  sudo sysctl --system
+   23  sudo apt install -y curl gnupg2 software-properties-common apt-transport-https ca-certificates
+   24  kubeadm init --pod-network-cidr=192.168.0.0/16
+   25  mkdir -p $HOME/.kube
+   26  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+   27  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+   28  mkdir -p $HOME/.kube
+   29  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+   30  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+   31  kubectl get nodes
+   32  mkdir -p $HOME/.kube
+   33  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+   34  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+   35  kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.25.1/manifests/calico.yaml
+   36  kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.49.0/deploy/static/provider/baremetal/deploy.yaml
+   37  ls
+   38  mkdir nginx
+   39  cd nginx/
+   40  vi nginx.yml
+   41  vi service.yml
+   42  kubctl get nodes
+   43  kubectl get nodes
+   44  kubectl apply -f nginx.yml
+   45  kubectl apply -f service.yml
+   46  kubectl get pods
+   47  kubectl get svc
+   48  kubectl describe get svc nginx
+   49  kubectl describe svc nginx
+   50  history
+
+worker node logs
+ 1  vi install.sh
+    2  sh install.sh
+    3  sudo sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
+    4  sudo modprobe overlay
+    5  sudo modprobe br_netfilter
+    6  sudo tee /etc/sysctl.d/kubernetes.conf <<EOF
+    7  net.bridge.bridge-nf-call-ip6tables = 1
+    8  net.bridge.bridge-nf-call-iptables = 1
+    9  net.ipv4.ip_forward = 1
+   10  EOF
+   11  sudo sysctl --system
+   12  vi /etc/hosts
+   13  sudo hostnamectl set-hostname "k8sworker1.example.net"
+   14  exec bash
+   15  sudo sysctl --system
+   16  kubeadm join 192.168.18.73:6443 --token wq7lhv.znd62tfqhzqqp9nm     --discovery-token-ca-cert-hash sha256:7d86559611f7d5e65eac44d50234474b14328665a3c246be90384dd82ac6c4a3
+   17  history
+
+
+
+
+
+
+
+
+
+
