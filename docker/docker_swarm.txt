@@ -38,6 +38,19 @@ if need that drain node in active state use instaed of drain --> Active
   here the service should run at a time nodes it scale availablity.
   this perfect example of the load balancer.
 
+label we can use this for perticular node identification and service running inthat perticular node.
+cmd: docker node update --label-add=role=worker1  ip-172-31-16-237
+     docker node update --label-add=pref=high ip-172-31-16-238
+     docker node update --label-add=perf=low ip-172-31-16-237
+according this label we can start the service only these node only and we can assign multiple label for one node.
+EX:
+ docker serice create --name testsvc001 --constraint=node.labels.perf==high --replicas 3 viswkum/abcd:v2
+
+and how t remove or update the label 
+ Ex: docker node update --label-rm=pref ip-172-31-16-237
+
+
+
   how to leave in node in docker swarm
   docker swarm node leave
   this command will remove node from master it will show the down.
