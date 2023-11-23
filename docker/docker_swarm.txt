@@ -54,8 +54,19 @@ Docker Node Maintainance:
 2.docker node update --availability drain ip-172-31-19-24 --> this service will all running service move to healthy running container and this container will empty for maintenance.
 3.docker node update --availability active ip-172-31-19-24 --> this service will make as active node usable.
 
+Docker swarm network
+bydefault ingress overlay gateway network will create and via that all cluster will communicate to the network each other.
+we need check network:
+1. docker network Ls.
 
+2. we need to create new network bridge (default)
+   docker network create abcd
+3. we need to create overlay ingress network, then mention the driver name
+   docker network create frontend --driver overlay
+Note: When using multiple network interfaces, we need to choose a specific network.
+  Ex: docker swarm init  --advertise-addr 192.168.179.189
 
+    
   how to leave in node in docker swarm
   docker swarm node leave
   this command will remove node from master it will show the down.
