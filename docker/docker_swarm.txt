@@ -49,6 +49,11 @@ EX:
 and how t remove or update the label 
  Ex: docker node update --label-rm=pref ip-172-31-16-237
 
+Docker Node Maintainance:
+1.docker node update --availability pause ip-172-31-19-24 --> this node new service should not take serivce from new serice container id
+2.docker node update --availability drain ip-172-31-19-24 --> this service will all running service move to healthy running container and this container will empty for maintenance.
+3.docker node update --availability active ip-172-31-19-24 --> this service will make as active node usable.
+
 
 
   how to leave in node in docker swarm
